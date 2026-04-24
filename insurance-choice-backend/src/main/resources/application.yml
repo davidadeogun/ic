@@ -1,0 +1,42 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /v1
+
+spring:
+  datasource:
+    url: jdbc:postgresql://${DB_HOST}:5432/${DB_NAME}?sslmode=require
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+
+  ai:
+    azure:
+      openai:
+        api-key: ${AZURE_OPENAI_KEY}
+        endpoint: ${AZURE_OPENAI_ENDPOINT}
+        chat:
+          options:
+            deployment-name: ${AZURE_OPENAI_DEPLOYMENT}
+            temperature: 0.0
+
+app:
+  jwt:
+    secret: SW5zdXJhbmNlQ2hvaWNlU2VjcmV0S2V5MjAyNFBoYXNlT25l
+    expiration: 86400000        # 24 h in ms
+  cors:
+    allowed-origins: 'https://ed2-insurance-choice-492716.web.app,https://ed2-backend-527267021985.us-central1.run.app,http://localhost:4200'
+
+logging:
+  level:
+    com.insurancechoice: DEBUG
+    org.springframework.security: WARN
