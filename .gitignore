@@ -1,0 +1,8 @@
+# dotenv files with real values — never commit
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,31 @@
+# Build output
+target/
+*.jar
+*.war
+*.class
+
+# IDE
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+.settings/
+.classpath
+.project
+
+# Spring Boot local profile overrides (contain real credentials — never commit)
+application-local.yml
+application-local.properties
+
+# dotenv files with real values (never commit)
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Maven wrapper
+!.mvn/wrapper/maven-wrapper.jar

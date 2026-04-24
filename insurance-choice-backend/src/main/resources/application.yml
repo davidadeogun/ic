@@ -31,7 +31,7 @@ spring:
 
 app:
   jwt:
-    secret: SW5zdXJhbmNlQ2hvaWNlU2VjcmV0S2V5MjAyNFBoYXNlT25l
+    secret: ${JWT_SECRET}
     expiration: 86400000        # 24 h in ms
   cors:
     allowed-origins: 'https://ed2-insurance-choice-492716.web.app,https://ed2-backend-527267021985.us-central1.run.app,http://localhost:4200'
